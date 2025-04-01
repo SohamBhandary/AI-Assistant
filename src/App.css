@@ -13,7 +13,7 @@
   height: 60%;
 }
 span{
-  margin-top:  19px;
+  margin-bottom:  15px;
 
   font-size: 2vmax;
   background: linear-gradient(to right,rgb(34,221,231),rgb(237,4,125));
@@ -43,8 +43,10 @@ button:hover{
   width: 100px;
 }
 p{
-  font-size: 1.5vmax;
+  font-size: 1.3vmax;
   color:white;
+  text-align: center;
+  padding: 0px 40px;
 }
 .response{
   display: flex;

@@ -18,14 +18,19 @@ const UserContext = ({ children }) => {
 
     async function aiResponse(prompt) {
         let text = await run(prompt);
-        let newText=text.split("**")&&text.split("*")&&text.replace("google","Soham ")&&text.replace("Google","Soham ")
-        setRecog(newText)
-        speak(newText)
+        text = text.replaceAll("google", "Soham").replaceAll("Google", "Soham");
+        
+        // Remove Markdown-style bold/italic symbols (* and **)
+        let cleanText = text.replace(/\*\*/g, "").replace(/\*/g, "");
+        
+        setRecog(cleanText);
+        speak(cleanText);
+        
         setRep(true)
         setTimeout(() => {
             setSpeaking(false)
             
-        }, 6000);
+        }, 4000);
        
     }
 
@@ -45,9 +50,25 @@ const UserContext = ({ children }) => {
     recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setRecog(transcript)
-        aiResponse(transcript);
+      takeCommand(transcript.toLowerCase())
     };
 
+    function takeCommand(command){
+        if(command.includes("open")&&command.includes("youtube")){
+            window.open("https://www.youtube.com/","_blank")
+            speak("Opening Youtube....")
+            set
+            setRecog("Opening Youtube....")
+            setTimeout(() => {
+                setSpeaking(false)
+                
+            }, 5000);
+           
+        }
+        else{
+            aiResponse(command)
+        }
+    }
     let value = { recognition,speaking,setSpeaking,recog,setRecog,rep,setRep };
 
     return (

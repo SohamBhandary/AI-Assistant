@@ -12,7 +12,7 @@ const App = () => {
     return (
         <div className='main'>
             <img src={ai} alt="" id='zara' />
-            <span>I'm Zara, Your Virtual Assistant</span>
+            <span>I'm Zara,Your Advance Virtual Assistant</span>
             {!speaking? <button onClick={() => { setRep(false) ;setRecog("listening....") ; setSpeaking(true) ;recognition.start() }}>
                 Click Here <FaMicrophone />
             </button>:  
