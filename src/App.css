@@ -7,6 +7,7 @@
   justify-content: start;
   flex-direction: column;
   padding: 10px;
+  
 }
 #zara{
   height: 70%;
@@ -38,3 +39,19 @@ button:hover{
   background-color:yellowgreen;
   cursor: pointer;
 }
+#speakimg{
+  width: 100px;
+}
+p{
+  font-size: 1.5vmax;
+  color:white;
+}
+.response{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:10px
+
+}
+ 
