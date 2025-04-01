@@ -7,13 +7,13 @@ import speak from "./assests/speak.gif";
 import aii from "./assests/aiVoice.gif"
 
 const App = () => {
-    let { recognition,speaking,setSpeaking,recog,rep } = useContext(datacontext);
+    let { recognition,speaking,setSpeaking,recog,rep,setRecog,setRep } = useContext(datacontext);
 
     return (
         <div className='main'>
             <img src={ai} alt="" id='zara' />
             <span>I'm Zara, Your Virtual Assistant</span>
-            {!speaking? <button onClick={() => {  setSpeaking(true) ;recognition.start() }}>
+            {!speaking? <button onClick={() => { setRep(false) ;setRecog("listening....") ; setSpeaking(true) ;recognition.start() }}>
                 Click Here <FaMicrophone />
             </button>:  
             <div className='response'>

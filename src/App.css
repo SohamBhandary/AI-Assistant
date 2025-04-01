@@ -10,7 +10,7 @@
   
 }
 #zara{
-  height: 70%;
+  height: 60%;
 }
 span{
   margin-top:  19px;
@@ -54,4 +54,8 @@ p{
   gap:10px
 
 }
- 
+#aigif{
+  width: 50vh;
+  height: 80px;
+
+}
